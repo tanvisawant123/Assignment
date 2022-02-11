@@ -1,0 +1,61 @@
+Bank
+package javaOOPSExample;
+
+ class Bank {
+	 int accno;
+	 String holderName;
+	 long accbalance;
+public Bank(int accno,String holderName,long accbalance)
+{
+	this.accbalance=accno;
+	this.holderName=holderName;
+	this.accbalance=accbalance;
+}
+public void withdraw(long amount)
+{
+	if((amount<accbalance) &&(amount>=500))
+	{
+		accbalance=accbalance-amount;
+		System.out.println(amount+"withdraw has done successfully");
+	}
+}
+public void checkBalance()
+{
+	System.out.println("account no:"+this.accno);
+	System.out.println("account Holder name:"+this.holderName);
+	System.out.println("account Balance:"+this.accbalance);
+}
+}
+
+
+
+Bank transaction
+package javaOOPSExample;
+
+import java.util.Scanner;
+
+public class BankTransaction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+long withdraw,accbalance;
+int accno;
+String holderName;
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter account no:");
+accno=sc.nextInt();
+System.out.println("Enter account holder name:");
+holderName=sc.nextLine();
+sc.nextLine();
+System.out.println("Enter Balance:");
+accbalance=sc.nextLong();
+
+Bank tanvi=new Bank(accno,holderName,accbalance);
+System.out.println("Enter amount to withdraw:");
+withdraw=sc.nextLong();
+ tanvi.withdraw(withdraw);
+ tanvi.checkBalance();
+ 
+	}
+
+}
