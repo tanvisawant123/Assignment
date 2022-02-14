@@ -1,0 +1,33 @@
+package OOPS;
+
+class bank
+{
+String bankName;
+public bank(String bankName)
+{
+	this.bankName=bankName;
+}
+public int interest()
+{
+	return 8;
+}
+
+}
+class sbi extends bank
+{
+	public sbi(String bankName) {
+		 super(bankName);
+	}
+	void display()
+	{
+		System.out.println("Bank Name:"+bankName);
+	}
+	
+}
+public class InheritanceExample{
+	public static void main(String[]args) {
+		sbi s=new sbi("State bank of india");
+		s.display();
+		System.out.println("interest:"+s.interest()+"%");
+	}
+}
